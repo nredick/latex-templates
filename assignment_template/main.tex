@@ -1,0 +1,44 @@
+% latex template for assignments 
+
+% General
+\documentclass{article}[margin=0.5in]
+\usepackage[utf8]{inputenc}
+\pagenumbering{arabic}
+
+% Images 
+\usepackage{graphicx, subcaption}
+\graphicspath{{./refs/}}
+
+% Formatting
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol, multirow, caption, hyperref, float, csquotes}
+\everymath{\displaystyle}
+
+% Math
+\usepackage{mathtools, amsthm, theorem, verbatim, amssymb, amsmath, gensymb, bm}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\hfrac}[2]{\left .#1 \middle/ #2 \right.}
+\newenvironment{sol}[1][]{\vspace{0.25cm}{\large\bfseries Solution: }}{}
+\newenvironment{prob}[1]{\Large #1}
+
+% SI 
+\usepackage{booktabs, cancel, cleveref, colortbl, datatool, helvet, mathpazo, listings, pgfplots, xcolor}
+\usepackage{siunitx}
+    
+% Document
+\title{\bfseries 
+COURSE\par 
+Assignment NUM} % \par \large <assignment title>}
+
+\author{\Large FirstName LastName -- StudentID}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\input{q1}
+% add other question tex files here 
+\end{document}
+
