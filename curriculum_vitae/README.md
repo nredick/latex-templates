@@ -17,4 +17,4 @@ This template is designed to be flexible and easy to use. The sections are prima
 9. Publications
 10. Last Updated
 
-![Template Image](./refs/template.pdf)
+![Template Image](./refs/template.png)
