@@ -1,0 +1,285 @@
+\documentclass[a4paper,10pt]{article} % document definition
+
+%% PACKAGES 
+	
+% formatting
+\usepackage{parskip} 
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+\usepackage{enumitem}
+\usepackage{csquotes}
+
+\usepackage{url}
+
+%tabularx environment
+\usepackage{tabularx}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+
+%----------FONT OPTIONS----------
+%  sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+\usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header \& footer fields
+\fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+\usepackage{geometry}
+    \geometry{
+    a4paper,
+    lmargin=1cm, 
+    rmargin=1cm,
+    tmargin=1cm,
+    bmargin=0.5cm
+ }
+
+%for lists within experience section
+\usepackage{enumitem}
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.5\textwidth}
+
+%custom \section
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{multirow}
+
+% custom section formatting
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+% for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+\addbibresource{publications.bib}
+% \setlength\bibitemsep{1em}
+
+%Setup hyperref package, and colour for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{HTML}{0466c8} % CHANGE COLOUR HERE
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons
+\usepackage{fontawesome5}
+
+\begin{document}
+\raggedright
+
+% non-numbered pages
+\pagestyle{empty} 
+
+% headings for resume items 
+\newcommand{\workheading}[4]{
+		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+			\textbf{#1} @ \textit{#2} & \textit{#3} $|$ #4 \\
+		\end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\projheading}[3]{
+		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+			\textbf{#1} $|$ \textit{#2} & #3 \\
+		\end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\eduheading}[4]{
+		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+			\textbf{#1} (#2) & \textit{#3} $|$ #4 \\
+		\end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\awardheading}[4]{
+		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+			\textbf{#1} \textit{#4} & \textit{#2} $|$ #3 \\
+		\end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\CVitem}[1]{
+	\item[--]{
+		{#1\vspace{-7pt}}
+	}
+}
+
+\newcommand{\BeginCVItemList}{\begin{itemize}[topsep=0pt]}
+\newcommand{\EndCVItemList}{\end{itemize}}
+
+\newcommand{\spacebetweenitems}{\vspace{3pt}}
+\newcommand{\spaceaftersectionheading}{\vspace{-4pt}}
+\newcommand{\spaceaftersections}{\vspace{-4pt}}
+
+% define environment for each section 
+\newenvironment{skill}[1]{\textbf{#1}: }{\vspace{-4pt}}
+\newenvironment{work}[4]{\workheading{#1}{#2}{#3}{#4}}{}
+\newenvironment{project}[3]{\projheading{#1}{#2}{#3}}{}
+\newenvironment{school}[4]{\eduheading{#1}{#2}{#3}{#4}}{}
+\newenvironment{extra}[3]{\projheading{#1}{#2}{#3}}{}
+\newenvironment{award}[4]{\awardheading{#1}{#2}{#3}{#4}}{}
+% \newenvironment{publication}[]{}
+
+%% HEADER %%
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+    % Fill in the following sections: 
+
+    % your name (add \scshape inside the brackets for UPPERCASE
+    \huge{FIRSTNAME LASTNAME} \\[4pt] % \scshape
+    % where you're located 
+    \large{\textit{LOCATION}} \\[4pt]
+    % phone number 
+    \href{tel:PHONE NUMBER}{\raisebox{-0.05\height}\faPhone \ PHONE NUMBER} \ $|$ \ 
+    % email address
+    \href{mailto:EMAIL}{\raisebox{-0.05\height}\faEnvelope \ EMAIL} \ $|$ \ 
+    % github
+    \href{https://github.com/USERNAME}{\raisebox{-0.05\height}\faGithub\ USERNAME} \ $|$ \
+    % linkedin 
+    \href{https://linkedin.com/in/USERNAME}{\raisebox{-0.05\height}\faLinkedin\ USERNAME} \ $|$ \
+    % personal website
+    \href{https://WEBSITE.com}{\raisebox{-0.05\height}\faGlobe \ WEBSITE.com} 
+\end{tabularx}
+
+%% BODY %% 
+\vspace{-11pt}
+
+\section{Education}
+\spaceaftersectionheading
+\school{SCHOOL}{0.00 / 4.00}{LOCATION}{JAN. 0000 -- DEC. 0000}{
+    \BeginCVItemList
+    \CVitem{B.Sc. in \textbf{MAJOR} \& Minor in \textbf{SUBJECT}}
+
+    \CVitem{\textit{Relevant Courses}: COURSE, COURSE, COURSE.}
+
+    \EndCVItemList
+}\spacebetweenitems
+
+\spaceaftersections
+\section{Skills}
+\spaceaftersectionheading    
+    \skill{Programming Languages}{Python, MATLAB, C.}
+    \\\skill{Tools}{Git, \LaTeX, ArcGIS} 
+    \\\skill{Languages}{English (native), French (fluent)}
+\spaceaftersections
+\spaceaftersections
+
+\section{Experience}
+\spaceaftersectionheading
+\work{POSITION}{WORKPLACE}{LOCATION}{JAN. 0000 -- DEC. 0000}{ 
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit.}
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\work{POSITION}{WORKPLACE}{LOCATION}{JAN. 0000 -- DEC. 0000}{ 
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit.}
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\spaceaftersections
+
+\section{Projects} % use same format for research 
+\spaceaftersectionheading
+\project{PROJECT TITLE}{LOCATION/LAB/RESEARCH GROUP OR MORE DETAILS}{JAN. 0000 -- DEC. 0000}{
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit.}
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\project{PROJECT TITLE}{LOCATION/LAB/RESEARCH GROUP OR MORE DETAILS}{JAN. 0000 -- DEC. 0000}{
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit.}
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\spaceaftersections
+
+\section{Awards}
+\spaceaftersectionheading
+
+\award{AWARD}{GRANTED BY}{YEAR}{(\$0000)}{ 
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\award{AWARD}{GRANTED BY}{YEAR}{}{ 
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\spaceaftersections
+
+\section{Extra-curriculars}
+\spaceaftersectionheading
+
+% example 
+\extra{MEMBER}{CLUB NAME}{JAN. 0000 -- DEC. 0000}{
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\spaceaftersections
+
+\section{Professional Development}
+\spaceaftersectionheading
+\project{COURSE/SEMINAR/CERTIFICATION}{OFFERED BY}{DATE}{
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\project{COURSE/SEMINAR/CERTIFICATION}{OFFERED BY}{DATE}{
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\spaceaftersections
+
+\section{Field Experience}
+\spaceaftersectionheading
+\project{FIELD WORK}{SCHOOL/LOCATION}{(DURATION) DATE}{
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\project{FIELD WORK}{SCHOOL/LOCATION}{(DURATION) DATE}{
+    \BeginCVItemList
+    \CVitem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\spaceaftersections
+
+% PUBLICATIONS 
+\nocite{*}
+\printbibliography[title=Publications]
+\spaceaftersectionheading
+
+
+%% FOOTER %% 
+\vfill
+\center{\footnotesize \textcolor[HTML]{666666}{Last updated: \today}}
+\end{document}
