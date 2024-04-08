@@ -1,0 +1,143 @@
+% Author: Nathalie Redick
+
+\documentclass[a4paper,11pt]{article} % document definition
+
+%% PACKAGES
+
+% formatting
+\usepackage{parskip}
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=1]{geometry}
+\usepackage{enumitem}
+\usepackage{csquotes}
+
+\usepackage{url}
+
+%tabularx environment
+\usepackage{tabularx}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+
+%----------FONT OPTIONS----------
+%  sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+\usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header \& footer fields
+\fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+\usepackage{geometry}
+    \geometry{
+    a4paper,
+    lmargin=1in,
+    rmargin=1in,
+    tmargin=1in,
+    bmargin=1in
+ }
+
+%for lists within experience section
+\usepackage{enumitem}
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.5\textwidth}
+
+%custom \section
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{multirow}
+
+
+%Setup hyperref package, and colour for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{HTML}{0466c8} % CHANGE COLOUR HERE
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons
+\usepackage{fontawesome5}
+
+\begin{document}
+\raggedright
+
+% non-numbered pages
+\pagestyle{empty}
+
+%% HEADER %%
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+    % Fill in the following sections:
+
+    % your name (add \scshape inside the brackets for UPPERCASE
+    \huge{FIRSTNAME LASTNAME} \\[0.25in] % \scshape
+    % where you're located
+    \large{\textit{LOCATION}} \\[0.15in]
+    % phone number
+    \href{tel:PHONE NUMBER}{\raisebox{-0.05\height}\faPhone \ PHONE NUMBER} \ $|$ \
+    % email address
+    \href{mailto:EMAIL}{\raisebox{-0.05\height}\faEnvelope \ EMAIL} \ $|$ \
+    % github
+    \href{https://github.com/USERNAME}{\raisebox{-0.05\height}\faGithub\ USERNAME} \ $|$ \
+    % linkedin
+    \href{https://linkedin.com/in/USERNAME}{\raisebox{-0.05\height}\faLinkedin\ USERNAME} \ $|$ \
+    % personal website
+    \href{https://WEBSITE.COM}{\raisebox{-0.05\height}\faGlobe \ WEBSITE.com}
+\end{tabularx}
+
+%% DEFINITIONS %%
+
+\newcommand{\company}{[Company Name]}
+\newcommand{\name}{[def]}
+
+%% BODY %%
+\vspace{0.5in}
+
+\today
+
+%% ADDRESSEE %%
+{\company} \\
+% address if you have it
+123 Street St. \\
+City, State ZIP \\
+
+% email address for employer if you have it
+[contact@company.com]
+
+\vspace{0.25in}
+
+Dear \company, % use name of hiring manager if you have it 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit.
+
+\begin{itemize}
+    \item Nam vitae euismod purus, quis imperdiet velit.
+    \item Nam vitae euismod purus, quis imperdiet velit.
+\end{itemize}
+
+Nam vitae euismod purus, quis imperdiet velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper nisi eget nisl interdum mollis. Nam vitae euismod purus, quis imperdiet velit. Nam vitae euismod purus, quis imperdiet velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\vspace{0.25in}
+
+Sincerely,
+
+[Your Name]
+
+%% FOOTER %%
+\vfill
+\end{document}
